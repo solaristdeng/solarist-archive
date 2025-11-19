@@ -1,0 +1,297 @@
+/* src/article.css
+   Project: Brutalist Blog
+   Style: Raw, Bold, High Contrast, Structured
+*/
+
+/* ========================================================= */
+/* 1. 全局重置与工具类 (Global Reset & Utils)                */
+/* ========================================================= */
+
+/* 隐藏滚动条但保留功能 - 极简主义 */
+html {
+  scrollbar-width: none; /* Firefox */
+}
+body {
+  -ms-overflow-style: none; /* IE/Edge */
+}
+::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* 自定义光标逻辑 - 仅在非触屏设备启用 */
+.custom-cursor {
+  display: none;
+}
+@media (pointer: fine) {
+  .custom-cursor {
+    display: block;
+  }
+  /* 隐藏默认光标，让网页应用感更强 */
+  body, a, button, .cursor-pointer {
+    cursor: none !important;
+  }
+}
+
+/* ========================================================= */
+/* 2. 正文容器 (Markdown Body Container)                     */
+/* ========================================================= */
+
+/* 使用 !important 确保覆盖 Tailwind 或其他库的默认样式 */
+.markdown-body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #111;
+  line-height: 1.8; /* 保持高可读性行高 */
+  background-color: transparent;
+}
+
+/* 核心原则：拒绝圆角 */
+.markdown-body * {
+  border-radius: 0 !important;
+}
+
+/* ========================================================= */
+/* 3. 排版与文字 (Typography)                                */
+/* ========================================================= */
+
+/* 段落 */
+.markdown-body p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* 响应式字体放大 */
+@media (min-width: 768px) {
+  .markdown-body p {
+    font-size: 1.35rem;
+  }
+}
+
+/* 标题系统 - 粗犷、结构化 */
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4 {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em; /* 紧凑字距 */
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  color: #000;
+}
+
+.markdown-body h1 {
+  font-size: 2.5rem;
+  border-bottom: 6px solid #000; /* 加粗底线 */
+  padding-bottom: 1rem;
+}
+
+.markdown-body h2 {
+  font-size: 2rem;
+  background: #000; /* 反色风格 */
+  color: #fff;
+  display: inline-block; /* 背景仅包裹文字 */
+  padding: 0.2em 0.5em;
+  /* 或者保留你原来的左侧边框风格，二选一，这里为了保持一致性推荐反色或粗边框 */
+  /* border-left: 8px solid #000; padding-left: 1rem; background: transparent; color: #000; */
+}
+
+.markdown-body h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  border-left: 8px solid #000; /* 呼应引用的左边框 */
+  padding-left: 1rem;
+}
+
+/* 链接 - 交互感极强 */
+.markdown-body a {
+  text-decoration: underline;
+  text-decoration-thickness: 3px; /* 更粗的下划线 */
+  text-underline-offset: 4px;
+  color: #000;
+  transition: all 0.1s; /* 快速响应 */
+  font-weight: 700;
+}
+
+.markdown-body a:hover {
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.2); /* 悬停时也有硬阴影 */
+}
+
+/* ========================================================= */
+/* 4. 列表 (Lists)                                           */
+/* ========================================================= */
+.markdown-body ul {
+  list-style-type: square; /* 方块点，呼应整体风格 */
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+.markdown-body ol {
+  list-style-type: decimal-leading-zero; /* 01, 02... 更有工业感 */
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+  font-family: 'JetBrains Mono', monospace; /* 序号用等宽字体 */
+}
+.markdown-body li {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  padding-left: 0.5rem;
+}
+
+/* ========================================================= */
+/* 5. 引用 (Blockquote) - 风格：大字报/档案标记              */
+/* ========================================================= */
+.markdown-body blockquote {
+  border-left: 10px solid #000; /* 极粗边框 */
+  background: #e5e5e5;          /* 工业灰 */
+  color: #000;
+  padding: 2rem;
+  margin: 3rem 0;
+  
+  /* 字体风格 */
+  font-style: normal; 
+  font-weight: 600;
+  font-family: 'Courier New', Courier, monospace; /* 机械感 */
+}
+
+/* ========================================================= */
+/* 6. 代码块 (Pre & Code) - 风格：坚硬容器                   */
+/* ========================================================= */
+.markdown-body pre {
+  /* 结构：粗框 + 硬阴影 */
+  border: 3px solid #000;
+  box-shadow: 8px 8px 0px #000; /* 加大阴影距离，更夸张 */
+  
+  background-color: #fff; 
+  color: #000;
+  
+  padding: 1.5rem;
+  margin-bottom: 3rem; /* 增加底部间距以容纳阴影 */
+  overflow-x: auto;
+  line-height: 1.5;
+  
+  position: relative;
+  top: 0;
+  transition: top 0.1s, box-shadow 0.1s;
+}
+
+/* 按下效果 */
+.markdown-body pre:hover {
+  top: 4px;
+  box-shadow: 4px 4px 0px #000;
+}
+
+/* 字体 */
+.markdown-body code {
+  font-family: 'JetBrains Mono', 'Menlo', monospace;
+  font-weight: 500;
+  font-size: 0.92em;
+}
+
+/* 行内代码 - 高亮胶带风格 */
+.markdown-body p code,
+.markdown-body li code,
+.markdown-body table code {
+  border: 2px solid #000; /* 边框加粗 */
+  background-color: #fffae0; /* 亮黄 */
+  color: #000;
+  padding: 0.1em 0.4em;
+  margin: 0 0.2em;
+  font-size: 90%;
+  font-weight: 600;
+}
+
+/* 代码块内部重置 */
+.markdown-body pre code {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+}
+
+/* ========================================================= */
+/* 7. 补充元素 (Images, Tables, HR) - 确保风格统一           */
+/* ========================================================= */
+
+/* 图片 - 像照片贴纸一样 */
+.markdown-body img {
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0px #000; /* 保持一致的硬阴影 */
+  max-width: 100%;
+  height: auto;
+  margin: 2rem 0;
+}
+
+/* ========================================================= */
+/* 7. 表格 (Tables) - Excel 95 / 数据表风格                   */
+/* ========================================================= */
+
+/* 强制重置表格样式，对抗 Tailwind */
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse !important; /* 确保边框合并 */
+  margin: 2rem 0;
+  font-size: 1rem;
+  line-height: 1.4;
+  
+  /* 外边框：粗野风格的粗黑框 */
+  border: 3px solid #000 !important;
+  
+  /* 可选：表格也加硬阴影 */
+  box-shadow: 6px 6px 0px #000; 
+  background: #fff;
+}
+
+/* 表头和单元格 */
+.markdown-body th,
+.markdown-body td {
+  /* 内边框：稍细一点的黑线，但依然清晰 */
+  border: 2px solid #000 !important;
+  padding: 0.75rem 1rem;
+  text-align: left; /* 默认左对齐 */
+}
+
+/* 表头样式：反色高亮 */
+.markdown-body th {
+  background-color: #000 !important; /* 纯黑背景 */
+  color: #fff !important;            /* 纯白文字 */
+  font-weight: 800;
+  text-transform: uppercase;         /* 全大写 */
+  letter-spacing: 0.05em;
+}
+
+/* 斑马纹：提升数据可读性 */
+.markdown-body tr:nth-child(even) {
+  background-color: #f2f2f2; /* 浅灰间隔 */
+}
+
+/* 鼠标悬停某一行时的效果 */
+.markdown-body tr:hover td {
+  background-color: #fffae0; /* 高亮黄 */
+  color: #000;
+}
+
+
+
+/* 使用伪元素做一个很硬核的背景闪烁，不影响布局 */
+.highlight-target::before {
+  content: '';
+  position: absolute;
+  inset: -4px; /* 向外扩一点，包住文字 */
+  background-color: #fffae0; /* 你的高亮黄 */
+  border: 2px solid #000;
+  z-index: -1;
+  animation: fade-out 1.5s forwards;
+}
+
+@keyframes fade-out {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}

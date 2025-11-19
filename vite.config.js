@@ -4,5 +4,8 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/solarist-archive/',  // <--- 注意这里！例如: base: '/minimal-art-blog/',
+  base: '/solarist-archive/',
+  build: {
+    target: 'esnext' // <--- 关键修复：设置为 esnext 以支持 import.meta.glob
+  }
 })
