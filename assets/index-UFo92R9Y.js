@@ -12,16 +12,147 @@ tag: 1, 2, 3\r
 ---\r
 \r
 # test\r
-`,l1=`---\r
-title: a post\r
-tag: est, post\r
+`,l1=`\r
+# 一级标题\r
+## 二级标题\r
+### 三级标题\r
+#### 四级标题\r
+\r
 ---\r
 \r
-# imma trying to writing a post\r
+## 段落 / 换行\r
+这是一个普通段落。  \r
+这是一个带手动换行的段落（上行末尾有两个空格）。\r
 \r
-test\r
+---\r
 \r
-> quote test\r
+## 字体样式\r
+**粗体**  \r
+*斜体*  \r
+***粗斜体***  \r
+~~删除线~~  \r
+\`行内代码\`  \r
+\r
+---\r
+\r
+## 列表\r
+### 无序列表\r
+- 苹果\r
+- 香蕉\r
+- 葡萄\r
+\r
+### 有序列表\r
+1. 第一项\r
+2. 第二项\r
+3. 第三项\r
+\r
+### 任务列表\r
+- [x] 已完成  \r
+- [ ] 未完成  \r
+- [ ] 再来一个  \r
+\r
+---\r
+\r
+## 引用\r
+> 这是一个引用段落  \r
+> 可以多行  \r
+>> 也可以嵌套引用\r
+\r
+---\r
+\r
+## 代码块\r
+\r
+\`\`\`js\r
+function hello() {\r
+  console.log("Hello Markdown!");\r
+}\r
+\`\`\`\r
+\r
+\`\`\`python\r
+import math\r
+print(math.pi)\r
+\`\`\`\r
+\r
+---\r
+\r
+## 表格\r
+\r
+| 名称 | 数值  | 备注        |\r
+| -- | --- | --------- |\r
+| A  | 123 | 测试        |\r
+| B  | 456 | **粗体也可以** |\r
+| C  | 789 | *斜体也OK*   |\r
+\r
+---\r
+\r
+## 图片\r
+\r
+![测试图片-随机](https://picsum.photos/600/300)\r
+\r
+---\r
+\r
+## 超链接\r
+\r
+[访问 OpenAI](https://openai.com)\r
+[https://example.com](https://example.com)\r
+\r
+---\r
+\r
+## 折叠内容（details）\r
+\r
+<details>\r
+<summary>点击展开 / 折叠</summary>\r
+\r
+这是折叠内部的内容。\r
+\r
+* 支持列表\r
+* 支持图片\r
+* 支持代码块\r
+\r
+\`\`\`json\r
+{ "msg": "hello" }\r
+\`\`\`\r
+\r
+</details>\r
+\r
+---\r
+\r
+## 脚注示例\r
+\r
+Markdown 可以添加脚注[^1]，写起来很方便。\r
+\r
+[^1]: 这是脚注的内容。\r
+\r
+---\r
+\r
+## Mermaid 图示例\r
+\r
+\`\`\`mermaid\r
+flowchart TD\r
+    A[开始] --> B{条件?}\r
+    B -->|是| C[执行 1]\r
+    B -->|否| D[执行 2]\r
+    C --> E[结束]\r
+    D --> E[结束]\r
+\`\`\`\r
+\r
+---\r
+\r
+## 数学公式（MathJax）\r
+\r
+行内： $E = mc^2$\r
+块级：\r
+\r
+$$\r
+\\int_0^\\infty x^2 e^{-x} , dx = 2\r
+$$\r
+\r
+---\r
+\r
+## 水平分割线\r
+\r
+---\r
+\r
 \r
 `,a1=`---\r
 title: Test\r
