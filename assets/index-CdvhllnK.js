@@ -50,17 +50,16 @@ Please change the parent <Route path="${Q}"> to <Route path="${Q==="/"?"*":`${Q}
             writing-mode: vertical-rl;
           }
           
-          /* 1. 隐藏滚动条 (但保留功能) */
+          /* 1. 隐藏滚动条 (但功能保留) */
           ::-webkit-scrollbar {
             width: 0px;
             background: transparent;
           }
-          /* 兼容 Firefox */
           html {
             scrollbar-width: none; 
           }
 
-          /* 2. 光标控制 */
+          /* 2. 光标控制：仅在支持精细指针(如鼠标)的设备上显示自定义光标 */
           .custom-cursor {
             display: none;
           }
