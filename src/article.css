@@ -18,30 +18,30 @@ body {
   display: none; /* Chrome/Safari */
 }
 
-/* 自定义光标逻辑 - 仅在非触屏设备启用 */
-.custom-cursor {
-  display: none;
-}
-@media (pointer: fine) {
-  .custom-cursor {
-    display: block;
-  }
-  /* 隐藏默认光标，让网页应用感更强 */
-  body, a, button, .cursor-pointer {
-    cursor: none !important;
-  }
-}
-
 /* ========================================================= */
 /* 2. 正文容器 (Markdown Body Container)                     */
 /* ========================================================= */
 
 /* 使用 !important 确保覆盖 Tailwind 或其他库的默认样式 */
 .markdown-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Brutalist 中文字体栈 - Google Fonts + 系统回退 */
+  font-family: 
+    -apple-system, BlinkMacSystemFont, 
+    "Segoe UI", "Roboto", "Helvetica Neue", "Arial",
+    "Noto Sans SC",           /* Google Fonts - 优先 */
+    "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "微软雅黑",
+    "Source Han Sans SC",
+    sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji";
   color: #111;
-  line-height: 1.8; /* 保持高可读性行高 */
+  line-height: 1.8;
   background-color: transparent;
+  
+  /* 字体渲染优化 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* 核心原则：拒绝圆角 */

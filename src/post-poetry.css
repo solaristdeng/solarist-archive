@@ -1,0 +1,230 @@
+/* Poetry style - 诗歌专用样式 */
+
+.markdown-body {
+  /* 中文诗歌字体栈 - 优先楷体/宋体 */
+  font-family: 
+    
+    "Noto Serif SC",        /* Google Fonts 宋体作为回退 */
+    "STSong", "SimSun", "宋体",
+    "Songti SC",
+    Georgia, "Times New Roman",
+    serif;
+  color: #1a1a1a;
+  line-height: 1.8;
+  max-width: 700px;
+  padding: 3rem 2rem;
+  background: linear-gradient(to bottom, #fefefe 0%, #f9f9f9 100%);
+  
+  /* 字体渲染优化 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 诗歌段落 - 极小间距，模拟诗行 */
+.markdown-body p {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem; /* 诗行之间的小间距 */
+  margin-top: 0;
+  text-indent: 0; /* 诗歌不需要首行缩进 */
+  text-align: left;
+  padding-left: 2rem; /* 整体左侧留白 */
+  line-height: 1.9;
+}
+
+/* 连续段落之间保持小间距 */
+.markdown-body p + p {
+  margin-top: 0.3rem;
+}
+
+/* 使用空行（br标签或空p）来表示诗节分隔 */
+.markdown-body br {
+  display: block;
+  content: "";
+  margin: 1.5rem 0; /* 诗节间的间距 */
+}
+
+/* 空段落也视为诗节分隔 */
+.markdown-body p:empty {
+  margin: 1.5rem 0;
+  height: 0;
+}
+
+/* 标题 - 诗歌标题，优雅居中 */
+.markdown-body h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.15em;
+  text-align: center;
+  border: none;
+  margin-top: 0;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #d0d0d0;
+  color: #2c2c2c;
+}
+
+/* 副标题或节标题 */
+.markdown-body h2 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0.1em;
+  text-align: center;
+  background: transparent;
+  color: #4a4a4a;
+  border: none;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.markdown-body h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: left;
+  font-style: italic;
+  color: #666;
+  border-left: none;
+  padding-left: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* 引用 - 诗歌中的引语或注释 */
+.markdown-body blockquote {
+  border-left: 3px solid #b8860b;
+  background: #faf8f0;
+  font-style: italic;
+  font-family: 
+    "STKaiti", "KaiTi", "楷体",
+    "Noto Serif SC",
+    Georgia,
+    serif;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  margin-left: 2rem;
+  color: #5a5a5a;
+  font-size: 1rem;
+}
+
+.markdown-body blockquote p {
+  margin-bottom: 0.5rem;
+  padding-left: 0;
+}
+
+/* 链接 - 低调优雅 */
+.markdown-body a {
+  color: #8b7355;
+  text-decoration: none;
+  border-bottom: 1px solid #8b7355;
+  font-weight: normal;
+  transition: all 0.2s;
+}
+
+.markdown-body a:hover {
+  background: transparent;
+  color: #5a4a3a;
+  border-bottom-width: 2px;
+}
+
+/* 列表 - 保持诗歌风格 */
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.markdown-body li {
+  margin-bottom: 0.4rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* 代码 - 诗歌中很少用，但保持低调 */
+.markdown-body code {
+  font-family: 'Courier New', monospace;
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  padding: 0.1em 0.3em;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.markdown-body pre {
+  background-color: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  padding: 1rem;
+  margin: 1.5rem 0 1.5rem 2rem;
+  overflow-x: auto;
+  box-shadow: none;
+  font-size: 0.9rem;
+}
+
+.markdown-body pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* 表格 - 简洁优雅 */
+.markdown-body table {
+  border: 1px solid #d0d0d0;
+  box-shadow: none;
+  margin: 2rem 0 2rem 2rem;
+  font-size: 0.95rem;
+}
+
+.markdown-body th,
+.markdown-body td {
+  border: 1px solid #d0d0d0;
+  padding: 0.6rem 1rem;
+}
+
+.markdown-body th {
+  background-color: #f5f5f5 !important;
+  color: #333 !important;
+  font-weight: 600;
+  text-transform: none;
+}
+
+/* 强调样式 */
+.markdown-body strong {
+  font-weight: 600;
+  color: #2c2c2c;
+}
+
+.markdown-body em {
+  font-style: italic;
+  color: #4a4a4a;
+}
+
+/* 水平分隔线 - 诗节分隔 */
+.markdown-body hr {
+  border: none;
+  border-top: 1px solid #d0d0d0;
+  margin: 3rem auto;
+  width: 30%;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .markdown-body {
+    padding: 2rem 1rem;
+  }
+  
+  .markdown-body p {
+    font-size: 1.1rem;
+    padding-left: 1rem;
+  }
+  
+  .markdown-body h1 {
+    font-size: 1.6rem;
+  }
+  
+  .markdown-body blockquote,
+  .markdown-body pre,
+  .markdown-body table {
+    margin-left: 0;
+  }
+}

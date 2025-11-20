@@ -1,0 +1,92 @@
+/* Literary/Essay style - elegant, serif, more spacing */
+
+.markdown-body {
+  /* 文学样式 - 优雅衬线字体 */
+  font-family: 
+    "Noto Serif SC",        /* Google Fonts 宋体 - 优先 */
+    Georgia, Cambria, "Times New Roman",
+    "STSong", "SimSun", "宋体",
+    "Songti SC",
+    serif;
+  color: #2c2c2c;
+  line-height: 2.0;
+  max-width: 800px;
+  
+  /* 字体渲染优化 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.markdown-body p {
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+  text-indent: 2em; /* First line indent for literary feel */
+  text-align: justify;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0.05em;
+  font-family: 
+    "Noto Serif SC",
+    Georgia, Cambria,
+    "STSong", "SimSun", "宋体",
+    serif;
+  margin-top: 3rem;
+}
+
+.markdown-body h1 {
+  font-size: 2.5rem;
+  border-bottom: 2px solid #2c2c2c;
+  text-align: center;
+}
+
+.markdown-body h2 {
+  font-size: 2rem;
+  background: transparent;
+  color: #2c2c2c;
+  border-left: none;
+  text-align: left;
+}
+
+.markdown-body h3 {
+  font-size: 1.5rem;
+  font-style: italic;
+  border-left: none;
+  padding-left: 0;
+}
+
+.markdown-body blockquote {
+  border-left: 3px solid #8b7355;
+  background: #f9f7f4;
+  font-style: italic;
+  font-family: 
+    "Noto Serif SC",
+    Georgia, Cambria,
+    "STKaiti", "KaiTi", "楷体",
+    serif;
+  padding-left: 2rem;
+  color: #5a5a5a;
+}
+
+.markdown-body a {
+  color: #8b7355;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  font-weight: normal;
+}
+
+.markdown-body a:hover {
+  background: transparent;
+  color: #5a4a3a;
+}
+
+.markdown-body code {
+  font-family: 'Courier New', monospace;
+  background-color: #f5f5f5;
+  border: 1px solid #d0d0d0;
+  font-size: 0.9em;
+}

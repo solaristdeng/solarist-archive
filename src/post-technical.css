@@ -1,0 +1,56 @@
+/* Technical article style - code-focused, monospace heavy */
+
+.markdown-body {
+  /* 技术文档字体 - 等宽字体 */
+  font-family: 
+    "SF Mono", "Monaco", "Cascadia Code",
+    "Consolas", "Courier New",
+    "Courier", monospace;
+  background-color: #0a0a0a;
+  color: #00ff00;
+  padding: 2rem;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+  color: #00ff00;
+  font-family: 
+    "SF Mono", "Monaco", "Cascadia Code",
+    "Consolas", "Courier New", monospace;
+  border-color: #00ff00;
+}
+
+.markdown-body h2 {
+  background: #00ff00;
+  color: #000;
+}
+
+.markdown-body a {
+  color: #00ff00;
+  text-decoration-color: #00ff00;
+}
+
+.markdown-body a:hover {
+  background: #00ff00;
+  color: #000;
+}
+
+.markdown-body code {
+  background-color: #1a1a1a;
+  color: #00ff00;
+  border-color: #00ff00;
+}
+
+.markdown-body pre {
+  background-color: #000;
+  border-color: #00ff00;
+  box-shadow: 4px 4px 0px #00ff00;
+  color: #00ff00;
+}
+
+.markdown-body blockquote {
+  border-left-color: #00ff00;
+  background: #1a1a1a;
+  color: #00ff00;
+}

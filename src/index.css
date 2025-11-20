@@ -1,3 +1,38 @@
+/* Ensure focused state shows arrow and details - higher specificity */
+.is-focused .lucide-arrow-up-right {
+  opacity: 1 !important;
+}
+
+.is-focused h2 {
+  transform: translateX(1rem) !important;
+}
+
+/* Hide cursor in keyboard navigation mode */
+.keyboard-mode,
+.keyboard-mode * {
+  cursor: none !important;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 
+  Google Fonts 中文字体优化加载
+  使用 font-display: swap 确保文字立即显示，字体异步加载
+  只加载必要的字重，减少文件大小
+*/
+
+/* Noto Sans SC - 现代、清晰的中文黑体 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
+
+/* Noto Serif SC - 优雅的中文宋体 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&display=swap');
+
+/* 
+  性能说明：
+  - display=swap: 字体加载时先显示系统字体，避免白屏
+  - 只加载 4 个字重（400/500/700/900），每个约 50-80KB
+  - Google CDN 全球加速，通常 100-300ms 完成加载
+  - 总大小约 200-300KB（相比完整字体的 5-10MB）
+*/

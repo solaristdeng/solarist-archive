@@ -1,0 +1,6 @@
+/* Default post style - inherits from article.css */
+/* This is the fallback style when no type is specified */
+
+.markdown-body {
+  /* You can override or extend article.css styles here */
+}
