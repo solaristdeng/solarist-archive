@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowLeft, User, FileText } from 'lucide-react';
+import { ArrowLeft, User, FileText } from '../components/Icons';
 
 const AboutPage = () => {
   return (
@@ -75,8 +75,10 @@ const AboutPage = () => {
               <div>→ React 19 + Vite 7</div>
               <div>→ React Router for navigation</div>
               <div>→ Tailwind CSS for styling</div>
-              <div>→ Google Fonts (Noto Sans/Serif SC)</div>
+              <div>→ System fonts only (optimized)</div>
               <div>→ Markdown rendering with react-markdown</div>
+              <div>→ Code splitting & lazy loading</div>
+              <div>→ Custom inline SVG icons</div>
               <div>→ Automatic file timestamp detection</div>
             </div>
           </section>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft } from '../components/Icons';
 import { regularPosts, getAllTags, getPostsByTag } from '../data/posts';
 
 const ArchivePage = () => {

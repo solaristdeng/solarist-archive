@@ -1,4 +1,4 @@
-import { X } from 'lucide-react';
+import { X } from './Icons';
 
 const KeyboardHelp = ({ isOpen, onClose }) => {
   if (!isOpen) return null;

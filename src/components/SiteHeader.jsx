@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Search, HelpCircle } from 'lucide-react';
+import { Search, HelpCircle } from './Icons';
 
 const SiteHeader = ({
   statusText = ' ',

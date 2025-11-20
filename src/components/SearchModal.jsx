@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, X, ArrowRight } from 'lucide-react';
+import { Search, X, ArrowRight } from './Icons';
 
 const SearchModal = ({ isOpen, onClose, posts }) => {
   const [query, setQuery] = useState('');

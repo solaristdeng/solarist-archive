@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from './Icons';
 
 const ListItem = ({ title, id, index, tag, date, onHover, isFocused, disableHover }) => {
   const handleMouseEnter = () => {
