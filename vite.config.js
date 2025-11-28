@@ -5,7 +5,7 @@ import fileTimestampsPlugin from './vite-plugin-file-timestamps.js'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), fileTimestampsPlugin()],
-  base: '/solarist-archive/',
+  base: '/',
   build: {
     target: 'esnext',
     minify: 'terser',
