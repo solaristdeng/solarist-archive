@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+:root {
+    /* 1. 色彩：模拟纸张与墨色 (Paper & Ink) */
+    --bg-paper: #f7f5f0; /* 暖调米白，久看眼不累 */
+    --text-ink: #2b2b2b; /* 深炭灰，比纯黑柔和 */
+    --text-light: #6e6e6e; /* 旁注颜色 */
+    --accent-red: #a63434; /* 模拟朱批或印章的强调色 */
+    
+    /* 2. 几何与节奏 (Geometry & Rhythm) */
+    --measure: 65ch; /* 黄金阅读行宽 */
+    --baseline: 1.6; /* 行高 */
+    --gutter: 2rem;
+}
+
+body {
+    background-color: var(--bg-paper);
+    color: var(--text-ink);
+    font-family: "Songti SC", "Noto Serif SC", Georgia, serif; /* 衬线体优先，营造书卷气 */
+    font-size: 18px; /* 稍大的字号，提升沉浸感 */
+    line-height: var(--baseline);
+    margin: 0;
+    
+    /* 3. 页面构图 (Van de Graaf / Asymmetry) */
+    /* 上边距宽，下边距更宽，模拟手持书籍的重心 */
+    padding-top: 8vh; 
+    padding-bottom: 15vh; 
+}
+
+/* 布局容器：使用 Grid 实现正文与旁注的“双轨” (Chinese Woodblock Layout) */
+.layout-container {
+    display: grid;
+    /* 结构：左留白 | 正文(定宽) | 间隙 | 旁注(窄) | 右留白 */
+    grid-template-columns: 1fr min(var(--measure), 100%) 3rem 18ch 1fr;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* 正文区 */
+.main-content {
+    grid-column: 2;
+}
+
+/* 旁注区：模拟中国古籍的“眉批/侧批”或现代主义的 Sidenotes */
+.sidenote-column {
+    grid-column: 4;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-family: sans-serif; /* 用无衬线体区分层级 (Modernist Contrast) */
+    padding-top: 0.5rem;
+}
+
+/* 4. 现代主义的大胆层级 (Bold Hierarchy) */
+h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 3rem;
+    margin-top: 0;
+    grid-column: 2 / 5; /* 标题跨栏，打破平衡 */
+    border-bottom: 4px solid var(--text-ink); /* 极硬的分割线 */
+    padding-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 3em; /* 大量留白作为结构区分 (Japanese Wabi-sabi) */
+    margin-bottom: 1em;
+    position: relative;
+}
+
+/* 装饰性结构节点 (Islamic Inspiration) */
+h2::before {
+    content: "§"; /* 章节符号 */
+    position: absolute;
+    left: -2rem;
+    color: var(--accent-red);
+    font-weight: 300;
+}
+
+p {
+    margin-bottom: 1.6rem;
+    text-align: justify; /* 两端对齐，形成方块感 (Japanese Kihon-hanmen) */
+}
+
+/* 首字下沉 (European Drop Cap) */
+.drop-cap::first-letter {
+    float: left;
+    font-size: 4.5em;
+    line-height: 0.8;
+    padding-right: 0.1em;
+    padding-top: 0.05em;
+    font-weight: bold;
+    color: var(--text-ink);
+}
+
+/* 移动端适配：回归单栏 */
+@media (max-width: 1000px) {
+    .layout-container {
+        grid-template-columns: 1rem 1fr 1rem;
+    }
+    .main-content { grid-column: 2; }
+    .sidenote-column { 
+        grid-column: 2; 
+        border-left: 2px solid var(--accent-red);
+        padding-left: 1rem;
+        margin: 1rem 0;
+    }
+    h1 { grid-column: 2; font-size: 2.5rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="layout-container">
+    
+    <h1>内容优先：<br>一种静谧的秩序</h1>
+
+    <div class="main-content">
+        <p class="drop-cap">
+            你提到的“内容优先”，在设计上往往被误解为极简主义的空白。但真正的书籍设计告诉我们，空白不是“无”，而是结构的一部分。就像文艺复兴时期的排版师对待页边距那样，我们需要构建一种看不见的网格，让读者的视线在其中自然流淌。
+        </p>
+
+        <h2>几何与呼吸</h2>
+        <p>
+            当我们谈论网页设计时，往往忽略了“纸张”的物理属性。在这里，我们通过 CSS Grid 模拟了中国古籍中的版心与旁注关系。正文占据了主要的视觉焦点，而辅助信息则退居一侧，互不干扰。
+        </p>
+        <p>
+            这种布局允许视线在不需要跳转页面的情况下，获取多维度的信息。它是对称与不对称的博弈，也是秩序与自由的平衡。
+        </p>
+    </div>
+
+    <div class="sidenote-column">
+        <div style="margin-top: 8rem;">
+            <strong>旁注示例：</strong><br>
+            此处的设计灵感来自木刻本的“评点”。不仅是补充信息，更是版面节奏的调节器。
+        </div>
+        <div style="margin-top: 15rem;">
+            <strong>关于留白：</strong><br>
+            日本美学认为，空白（Ma）本身就是一种实体。
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

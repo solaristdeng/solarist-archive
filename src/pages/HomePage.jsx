@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import GlitchText from '../components/GlitchText';
 import ListItem from '../components/ListItem';
+import { EditableText } from '../components/AdminMode';
 
 const HomePage = ({ posts = [] }) => {
   const navigate = useNavigate();
@@ -81,16 +82,27 @@ const HomePage = ({ posts = [] }) => {
         </h1>
         <div className="flex justify-between items-end mt-8 font-mono text-sm md:w-1/2">
           <p>
-            KEYBOARD NAVIGATION ENABLED.
+            <EditableText 
+              id="home-keyboard-hint" 
+              defaultValue="KEYBOARD NAVIGATION ENABLED." 
+            />
             <br />
-            PRESS <kbd className="px-1 bg-black text-white">?</kbd> FOR SHORTCUTS.
+            <EditableText 
+              id="home-keyboard-hint-2" 
+              defaultValue="PRESS ? FOR SHORTCUTS." 
+            />
           </p>
         </div>
       </div>
 
       {/* Recent Posts */}
       <div className="p-4 md:px-12 pt-8 pb-4">
-        <h2 className="text-3xl font-black uppercase">RECENT POSTS</h2>
+        <h2 className="text-3xl font-black uppercase">
+          <EditableText 
+            id="home-recent-title" 
+            defaultValue="RECENT POSTS" 
+          />
+        </h2>
       </div>
 
       <div className="flex flex-col border-l border-black ml-0 md:ml-[20%]">

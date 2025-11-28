@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { ArrowLeft } from '../components/Icons';
 import { regularPosts, getAllTags, getPostsByTag } from '../data/posts';
+import { EditableText } from '../components/AdminMode';
 
 const ArchivePage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -44,10 +45,16 @@ const ArchivePage = () => {
       {/* Title */}
       <div className="p-6 md:p-12 border-b border-black">
         <h1 className="text-6xl md:text-9xl font-black uppercase leading-none tracking-tighter">
-          ARCHIVE
+          <EditableText 
+            id="archive-title" 
+            defaultValue="ARCHIVE" 
+          />
         </h1>
         <p className="font-mono text-xs text-gray-500 mt-4">
-          All articles organized by tags
+          <EditableText 
+            id="archive-subtitle" 
+            defaultValue="All articles organized by tags" 
+          />
         </p>
       </div>
 

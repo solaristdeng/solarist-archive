@@ -1,9 +1,15 @@
 import { Link } from 'react-router-dom';
 import { ArrowLeft, User, FileText } from '../components/Icons';
+import { EditableText } from '../components/AdminMode';
+import EasterEgg from '../components/EasterEgg';
+import { useRef } from 'react';
 
 const AboutPage = () => {
+  const titleRef = useRef(null);
+
   return (
     <div className="min-h-screen bg-white text-black">
+      <EasterEgg triggerRef={titleRef} />
       {/* Header */}
       <div className="w-full border-b border-black bg-white/90 backdrop-blur-sm z-50 flex justify-between items-center p-4 md:px-12">
         <Link
@@ -16,7 +22,10 @@ const AboutPage = () => {
 
       {/* Title */}
       <div className="p-6 md:p-12 border-b border-black">
-        <h1 className="text-6xl md:text-9xl font-black uppercase leading-none tracking-tighter">
+        <h1 
+          ref={titleRef}
+          className="text-6xl md:text-9xl font-black uppercase leading-none tracking-tighter cursor-pointer select-none"
+        >
           ABOUT
         </h1>
       </div>
@@ -26,15 +35,24 @@ const AboutPage = () => {
         <div className="space-y-8">
           {/* Introduction */}
           <section className="border-2 border-black p-6">
-            <h2 className="text-3xl font-black uppercase mb-4">SOLARIST ARCHIVE</h2>
+            <h2 className="text-3xl font-black uppercase mb-4">
+              <EditableText 
+                id="about-title" 
+                defaultValue="SOLARIST ARCHIVE" 
+              />
+            </h2>
             <div className="font-mono text-sm space-y-4">
               <p>
-                A brutalist blog system built with React, featuring automatic date management,
-                dynamic styling, and tag-based organization.
+                <EditableText 
+                  id="about-intro-1" 
+                  defaultValue="A brutalist blog system built with React, featuring automatic date management, dynamic styling, and tag-based organization." 
+                />
               </p>
               <p>
-                This archive follows the principles of brutalist web design: raw, functional,
-                and honest. No unnecessary decoration, just pure content.
+                <EditableText 
+                  id="about-intro-2" 
+                  defaultValue="This archive follows the principles of brutalist web design: raw, functional, and honest. No unnecessary decoration, just pure content." 
+                />
               </p>
             </div>
           </section>
@@ -87,10 +105,25 @@ const AboutPage = () => {
           <section className="border-2 border-black p-6">
             <h2 className="text-2xl font-black uppercase mb-4">CONTACT</h2>
             <div className="font-mono text-sm space-y-2">
-              <p>Feel free to reach out for collaboration or inquiries.</p>
+              <p>
+                <EditableText 
+                  id="contact-intro" 
+                  defaultValue="Feel free to reach out for collaboration or inquiries." 
+                />
+              </p>
               <div className="pt-4 space-y-1 text-xs">
-                <div>EMAIL: your-email@example.com</div>
-                <div>GITHUB: github.com/yourusername</div>
+                <div>
+                  EMAIL: <EditableText 
+                    id="contact-email" 
+                    defaultValue="your-email@example.com" 
+                  />
+                </div>
+                <div>
+                  GITHUB: <EditableText 
+                    id="contact-github" 
+                    defaultValue="github.com/yourusername" 
+                  />
+                </div>
               </div>
             </div>
           </section>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Footnote Test</title>
+    <style>
+        body { max-width: 800px; margin: 50px auto; font-family: sans-serif; }
+        .sidenote { 
+            float: right; 
+            clear: right; 
+            margin-right: -360px; 
+            width: 300px; 
+            font-size: 0.85rem;
+            background: #f0f0f0;
+            padding: 10px;
+        }
+        p { padding-right: 360px; }
+    </style>
+</head>
+<body>
+    <h1>Footnote Test</h1>
+    <p>这是一段文字，有一个脚注<sup><a href="#fn1">1</a></sup><span class="sidenote"><sup>1</sup> 这是第一个脚注的内容</span>。继续更多文字。</p>
+    <p>这是另一段文字，有另一个脚注<sup><a href="#fn2">2</a></sup><span class="sidenote"><sup>2</sup> 这是第二个脚注的内容</span>。</p>
+    <p>这是第三段，没有脚注。</p>
+</body>
+</html>
